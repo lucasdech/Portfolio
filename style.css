@@ -1,0 +1,467 @@
+* {
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+}
+
+body {
+
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    background-color: rgb(255, 255, 255);
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.2em;
+
+    background: radial-gradient(50% 50% at 110% 30%, rgba(252, 115, 168, 0.4) 0%, rgba(255, 255, 255, 0) 92.09%), radial-gradient(30% 40% at 105% 50%, rgba(113, 179, 255, 0.4) 0%, rgba(255, 255, 255, 0) 92.09%), radial-gradient(40% 40% at 20% 110%, rgba(180, 162, 247, 0.7) 0%, rgba(255, 255, 255, 0) 92.09%), radial-gradient(100% 60% at -20% 80%, rgba(120, 173, 243, 0.7) 0%, rgba(255, 255, 255, 0) 92.09%);
+    z-index: -1;
+    background-attachment: fixed;
+}
+
+
+/* debut header */
+#header {
+
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    height: 3em;
+    font-size: x-large;
+    width: 100%;
+    position: fixed;
+}
+
+#header a {
+
+    margin-right: 3em;
+    margin-top: 1em;
+    background-image: linear-gradient(to right,
+            #6883fc,
+            #6883fc 50%,
+            #000000 50%);
+    background-size: 200% 100%;
+    background-position: -100%;
+    display: inline-block;
+    padding: 5px 0;
+    position: relative;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: all 0.3s ease-in-out;
+}
+
+#header a:before {
+    content: '';
+    background: #6883fc;
+    display: block;
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    transition: all 0.3s ease-in-out;
+}
+
+#header a:hover {
+    background-position: 0;
+}
+
+#header a:hover::before {
+    width: 100%;
+}
+
+/* DEBUT CODE POUR LE MNU BURGER */
+
+    #menu_burger {
+
+        position: absolute;
+        top: 2em;
+        left: 10em;
+    }
+
+    /* .menu_burger_items {
+        position: absolute;
+        top: -1em;
+        left: -6em;
+    } */
+
+/* FIN CODE POUR LE MNU BURGER */
+
+.hidden_div {
+    display: none;
+}
+
+/* fin header */
+
+
+/* debut status */
+#status {
+
+    /* border: 5px solid green; */
+    padding-inline: 2%;
+    height: 25em;
+    font-size: x-large;
+    text-align: center;
+    justify-content: center;
+    padding-top: 12em;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.3);
+
+}
+
+.poste {
+
+    font-size: 2.6em;
+}
+
+@media  screen and (max-width: 400px) {
+    .poste {
+        font-size: 1.5em;
+    }
+}
+
+
+.status_dot {
+    position: relative;
+    top: -3px;
+    left: 490px;
+    background-color: rgb(51, 240, 82);
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-top: 0.4em;
+    margin-right: 0.8em;
+}
+
+.status_dispo {
+
+    display: flex;
+    justify-content: center;
+}
+
+/* fin status */
+
+
+/* debut presentation */
+#presentation {
+
+
+    /* border: 5px solid pink; */
+
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.3);
+}
+
+@media screen and (min-width: 800px) {
+    
+    #presentation {
+        margin: 4em;
+    }
+
+   .presentation_text {
+        width: 80%;
+   }
+
+}
+
+#presentation div {
+
+    margin-top: 2em;
+    margin-inline: 2%;
+}
+
+#presentation img {
+
+    border: 3px solid black;
+    border-radius: 15px;
+    filter: grayscale(80%);
+    margin-bottom: 3em;
+    transition-duration: 1.5s;
+}
+
+#presentation img:hover {
+
+    border-radius: 15px;
+    filter: grayscale(0%);
+}
+
+.presentation_text {
+
+    /* border: 3px solid black; */
+
+    width: 100%;
+}
+
+#presentation img {
+
+    height: 20em;
+}
+
+.liens {
+
+    display: flex;
+    justify-content: center;
+}
+
+.liens i {
+
+    margin-left: 1.2em;
+    margin-top: 1em;
+}
+
+/* fin presentation */
+
+/* debut de contact */
+
+#contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.3);
+}
+
+
+.input-group {
+    margin-top: 1.5em;
+    font-size: 1.25rem;
+    position: relative;
+    --primary: #000000;
+}
+
+.input {
+    all: unset;
+    color: #000000; 
+    padding: 1rem;
+    border: 1px solid #222222;
+    border-radius: 10px;
+    transition: 150ms
+        cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.label {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    color: #d4d4d4;
+    pointer-events: none;
+    transition: 150ms
+        cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+
+.input:focus {
+
+    border: 1px solid
+    var(--primary);
+}
+
+.input:is(:focus, :valid) ~ label {
+
+    transform: 
+        translateY(-120%)
+        scale(0.7); 
+    background-color: #ffffff;
+    padding-inline: 0.3rem;
+    color: var(--primary);
+}
+
+.textarea {
+    height: 10em;
+}
+
+.btn {
+    margin-top: 2em;
+}
+
+.div_btn {
+    text-align: center;
+}
+
+/* fin de contact */
+
+
+/* debut projet */
+
+#projet {
+
+    display: flex;
+    flex-direction: column;
+
+    /* border: 5px solid greenyellow; */
+    width: 100%;
+}
+
+.projet_presentation {
+    margin: 2em;
+}
+
+.projet_icons {
+
+    display: flex;
+    justify-content: center;
+}
+
+/* .projet_icons svg {
+
+    margin-left: 2em;
+} */
+
+.projet_icons svg:hover {
+
+    transform: scale(0.8);
+    transition-duration: 1s, 1s;
+}
+
+.all_project {
+
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.carte_projet {
+
+    margin: 4em;
+    height: 300px;
+    width: 350px;
+    border: 3px solid black;
+}
+
+.img_projet {
+    height: 250px;
+    width: 100%;
+}
+
+.projet_1 {
+
+    background: url(images/luxuryService.png);
+    background-position-x: center;
+    background-position-y: top;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition-duration: 5s;
+ }
+
+ .projet_1:hover {
+    background-position-y: bottom;
+ }
+
+
+ .projet_2 {
+
+    background-image: url(images/combat.png);
+    background-position-x: center;
+    background-position-y: top;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition-duration: 5s;
+ }
+
+  .projet_2:hover {
+    background-position-y: bottom;
+ }
+
+ .projet_3 {
+      background-image: url(images/lucas-shop.png);
+    background-position-x: center;
+    background-position-y: top;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition-duration: 5s;
+ }
+
+  .projet_3:hover {
+    background-position-y: bottom;
+ }
+
+  .projet_4 {
+      background-image: url(images/Drumpad.png);
+    background-position-x: center;
+    background-position-y: top;
+    background-size: cover;
+    background-repeat: no-repeat;
+ }
+
+ .projet_5 {
+      background-image: url(images/TheMountain.png);
+    background-position-x: center;
+    background-position-y: top;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition-duration: 5s;
+ }
+
+  .projet_5:hover {
+    background-position-y: bottom;
+ }
+
+  .projet_6 {
+      background-image: url(images/ComparateurVol.png);
+    background-position-x: center;
+    background-position-y: top;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition-duration: 5s;
+ }
+
+  .projet_6:hover {
+    background-position-y: bottom;
+ }
+
+ .etiquettes {
+    background-color: rgba(128, 128, 128, 0.5);
+    color: white;
+    border-radius: 15px;
+    text-align: center;
+    width: auto;
+    padding: 0.25em;
+    margin: 0.5em;
+ }
+
+ .all_projet_skills {
+    display: flex;
+ }
+
+/* fin projet */
+
+
+
+/* debut Media query */
+
+@media screen and (max-width: 650px) {
+
+    #presentation {
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #header {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 650px){
+    
+    #menu_burger {
+        display: none;
+    }
+}
+
+/* @media screen and (max-width: 550px) {
+    
+    #projet {
+        margin-left: 2em;
+    }
+} */
+
+@media screen and (max-width: 500px) {
+    .status_dot {
+        position: absolute;
+        top: 29em;
+        left: 8em;
+    }
+}
+
+
+/* fin Media query  */
