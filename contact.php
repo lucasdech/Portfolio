@@ -3,5 +3,24 @@
 
 $headers = 'From:<'. $_POST['mail'] . ">\r\n" .
 
-mail('<lucasdechavanne22@gmail.com>', 'the subject', 'the message', $headers,
-  '-fwebmaster@example.com');
+
+$to = "lucasdechavanne22@gmail.com";
+$subject = "Subject";
+
+// compose headers
+$headers = "From: webmaster@example.com\r\n";
+$headers .= "Reply-To: webmaster@example.com\r\n";
+$headers .= "X-Mailer: PHP/".phpversion();
+
+// compose message
+$message = " Lorem ipsum dolor sit amet, consectetuer adipiscing elit.";
+$message .= " Nam iaculis pede ac quam. Etiam placerat suscipit nulla.";
+$message .= " Maecenas id mauris eget tortor facilisis egestas.";
+$message .= " Praesent ac augue sed enim aliquam auctor. Ut dignissim ultricies est.";
+$message .= " Pellentesque convallis tempor tortor. Nullam nec purus.";
+$message = wordwrap($message, 70);
+
+// send email
+mail($to, $subject, $message, $headers);
+
+var_dump($bool);
