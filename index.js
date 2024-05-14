@@ -1,3 +1,5 @@
+// animation pour le menu burguer
+
 let menu_burger_icon = document.querySelector('.menu_burger_icon')
 let menu_burger_items = document.querySelector('.menu_burger_items')
 
@@ -5,3 +7,17 @@ menu_burger_icon.addEventListener('click',function() {
 
     menu_burger_items.classList.toggle('hidden_div')
 })
+
+// pour la nav bar 
+
+let navbar = document.querySelector('#header')
+
+    window.addEventListener('scroll', function () {
+
+        if ((this.window.scrollY) > 240) {
+            navbar.classList.add("herder_scrol")
+        } else if ((this.window.scrollY) < 240) {
+            navbar.classList.remove("herder_scrol")
+        }
+
+    })

@@ -13,7 +13,7 @@
 
     <!-- debut header -->
 
-    <header id="header">
+    <header id="header" class="">
         <a href="#status">Status</a>
         <a href="#presentation">Contact</a>
         <a href="#projet">Projets</a>
@@ -102,7 +102,7 @@
                 </div>
 
                 <div class="div_btn">
-                    <button type="submit" class="btn">Ajouter</button>
+                    <button type="submit" class="btn">Envoyer</button>
                 </div>
             </form>
 
