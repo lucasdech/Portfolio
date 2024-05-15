@@ -21,3 +21,28 @@ let navbar = document.querySelector('#header')
         }
 
     })
+
+// test pour le mail 
+
+
+window.onload = function() {
+
+                emailjs.init({  
+                    publicKey: "axGHXJxZTzNmxwZFq",
+                    });
+    
+            document.getElementById('contact-form').addEventListener('submit', function(event) {
+                event.preventDefault();
+
+
+                        console.log('ppl')
+                
+                // these IDs from the previous steps
+                emailjs.sendForm('service_zney9zb', 'template_3fqpmsc', this)
+                    .then(() => {
+                        console.log('SUCCESS!');
+                    }, (error) => {
+                        console.log('FAILED...', error);
+                    });
+            });
+        }

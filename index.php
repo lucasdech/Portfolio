@@ -79,7 +79,9 @@
             <p>contact</p>
         </div>
 
-            <form method="post" action="/contact.php">
+            <form id='contact-form'>
+
+                <input type="hidden" name="contact_number" value="service_zney9zb">
 
                 <div class="input-group">
                     <input class="input" required type="text" name="firstname">
@@ -296,6 +298,7 @@
 
 
     <script src="index.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 </body>
 
 </html>
