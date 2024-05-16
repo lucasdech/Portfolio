@@ -63,7 +63,8 @@ gsap.registerPlugin(ScrollTrigger);
         toggleActions: "restart pause reverse pause"
     },
     x: 1800,
-    duration:3
- });
+    duration:10
+ },
+ );
 
 

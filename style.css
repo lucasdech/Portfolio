@@ -80,8 +80,8 @@ body {
     #menu_burger {
 
         position: absolute;
-        top: 2em;
-        left: 10em;
+        top: 3em;
+        left: 3em;
     }
 
     .menu_burger_bg {
@@ -89,6 +89,10 @@ body {
         height: 100%;
         width: 100%;
         background-color: red;
+    }
+
+    #menu_burger i {
+        transform: scale(1.5);
     }
 
 /* FIN CODE POUR LE MNU BURGER */
@@ -495,5 +499,9 @@ button {
     }
 }
 
-
+@media screen and (max-width: 1500px) {
+    #animation {
+        display: none;
+    }   
+}
 /* fin Media query  */
