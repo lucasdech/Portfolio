@@ -36,6 +36,13 @@ body {
     z-index: 1;
 }
 
+.header_scroll_burguer {
+    background-color: #ffffff;
+    border-bottom: 2px solid rgba(128, 128, 128, 0.3);
+    z-index: 1;
+    height: 6em;
+}
+
 
 #header a {
 
@@ -78,22 +85,39 @@ body {
 /* DEBUT CODE POUR LE MNU BURGER */
 
     #menu_burger {
-
-        position: absolute;
-        top: 3em;
-        left: 3em;
-    }
-
-    .menu_burger_bg {
-        z-index: 1;
+        position: fixed;
+        top: 0;
+        left: 0;
         height: 100%;
         width: 100%;
-        background-color: red;
+        z-index: 1;
     }
 
-    #menu_burger i {
+    .background_burguer {
+        background: radial-gradient(50% 50% at 110% 30%, rgba(252, 115, 168, 0.4) 0%, rgba(255, 255, 255, 1) 92.09%), radial-gradient(30% 40% at 105% 50%, rgba(113, 179, 255, 0.4) 0%, rgba(255, 255, 255, 1) 92.09%), radial-gradient(40% 40% at 20% 110%, rgba(180, 162, 247, 0.7) 0%, rgba(255, 255, 255, 1) 92.09%), radial-gradient(100% 60% at -20% 80%, rgba(120, 173, 243, 0.7) 0%, rgba(255, 255, 255, 1) 92.09%);
+    }
+
+    .menu_burger_icon {
+        position: absolute;
+        top: 2em;
+        left: 2em;
         transform: scale(1.5);
     }
+
+    .menu_burger_items {
+        position: absolute;
+        top: 10%;
+        left: 10%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .menu_burger_items a {
+        text-decoration: none;
+        margin: 2em;
+        font-size: xx-large;
+    }
+
 
 /* FIN CODE POUR LE MNU BURGER */
 
