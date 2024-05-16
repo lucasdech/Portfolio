@@ -84,11 +84,12 @@ body {
         left: 10em;
     }
 
-    /* .menu_burger_items {
-        position: absolute;
-        top: -1em;
-        left: -6em;
-    } */
+    .menu_burger_bg {
+        z-index: 1;
+        height: 100%;
+        width: 100%;
+        background-color: red;
+    }
 
 /* FIN CODE POUR LE MNU BURGER */
 
@@ -442,6 +443,18 @@ button {
 
 /* fin projet */
 
+
+/* debut animation navbar  */
+
+#animation {
+    position: fixed;
+    top: 50px;
+    left: 10px;
+    z-index: 1;
+    background-image: url(./images/skatesimple-removebg-preview.png);
+}
+
+/* fin animation navbar  */
 
 
 /* debut Media query */

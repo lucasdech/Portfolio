@@ -2,10 +2,12 @@
 
 let menu_burger_icon = document.querySelector('.menu_burger_icon')
 let menu_burger_items = document.querySelector('.menu_burger_items')
+let menu_burger = document.querySelector('#menu_burger')
 
 menu_burger_icon.addEventListener('click',function() {
 
     menu_burger_items.classList.toggle('hidden_div')
+    menu_burger_items.classList.add('menu_burger_bg')
 })
 
 // pour la nav bar 
@@ -46,3 +48,22 @@ window.onload = function() {
                     });
             });
         }
+
+
+gsap.registerPlugin(ScrollTrigger);
+
+ gsap.to("#animation", {
+
+    scrollTrigger: {
+        trigger: "#header",
+        start: "top",
+        endTrigger : ".end",
+        end: "bottom",
+        scrub: true,
+        toggleActions: "restart pause reverse pause"
+    },
+    x: 1800,
+    duration:3
+ });
+
+
