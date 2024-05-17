@@ -1,3 +1,4 @@
+
 // animation pour le menu burguer
 
 let menu_burger_icon = document.querySelector('.menu_burger_icon')
@@ -64,8 +65,7 @@ let menuburger = document.querySelector('#scroll_burguer')
     })
 
 
-
-// test pour le mail 
+// pour le mail 
 
 
 window.onload = function() {
@@ -75,17 +75,31 @@ window.onload = function() {
                     });
     
             document.getElementById('contact-form').addEventListener('submit', function(event) {
+
                 event.preventDefault();
+
+
                 
                 // these IDs from the previous steps
                 emailjs.sendForm('service_zney9zb', 'template_3fqpmsc', this)
                     .then(() => {
                         console.log('SUCCESS!');
+                        swal("merci !", "Mail bien envoyé ! Merci", "success");
                     }, (error) => {
                         console.log('FAILED...', error);
+                        swal("OUPSS !", "Erreur Lors de L'envoie du Mail !", "error");
+
                     });
             });
         }
+
+    let btnSubmit = document.querySelector('#submitBTN')
+    btnSubmit.addEventListener('submit', function(e) {
+        e.preventDefault()
+        console.log('stop')
+    })
+
+
 
 
 // animation du skate de la nav bar 
