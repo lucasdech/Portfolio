@@ -74,16 +74,30 @@ window.onload = function() {
                     publicKey: "axGHXJxZTzNmxwZFq",
                     });
     
-            document.getElementById('contact-form').addEventListener('submit', function(event) {
+            let formulaire = document.getElementById('contact-form')
+
+            formulaire.addEventListener('submit', function(event) {
 
                 event.preventDefault();
 
+                // selection des inputs pour les vider
 
-                
+                let inputfirstname = document.querySelector('#firstname')
+                let inputlastname = document.querySelector('#lastname')
+                let inputmail = document.querySelector('#mail')
+                let inputtext = document.querySelector('#text')
+
+
                 // these IDs from the previous steps
                 emailjs.sendForm('service_zney9zb', 'template_3fqpmsc', this)
                     .then(() => {
                         console.log('SUCCESS!');
+
+                        inputfirstname.value = ""
+                        inputlastname.value = ""
+                        inputmail.value = ""
+                        inputtext.value = ""
+
                         swal("merci !", "Mail bien envoyé ! Merci", "success");
                     }, (error) => {
                         console.log('FAILED...', error);
@@ -93,11 +107,6 @@ window.onload = function() {
             });
         }
 
-    let btnSubmit = document.querySelector('#submitBTN')
-    btnSubmit.addEventListener('submit', function(e) {
-        e.preventDefault()
-        console.log('stop')
-    })
 
 
 
